@@ -197,3 +197,9 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# fire up VS code
+# https://kevgriffin.com/how-to-run-visual-studio-code-from-terminal-on-mac-osx/
+function code () {
+  VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;
+}

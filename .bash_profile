@@ -46,3 +46,22 @@ complete -W "NSGlobalDomain" defaults;
 
 # Add `killall` tab completion for common apps
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
+
+# AWS
+export SKYSCANNER_MFA_DEVICE_ARN=arn:aws:iam::295180981731:mfa/Emi.Liu@Skyscanner.net
+#export SKYSCANNER_MFA_DEVICE_ARN=arn:aws:iam::325714046698:mfa/Emi.Liu@Skyscanner.net
+export SKYSCANNER_ASSUMED_ROLE=sandbox
+export SKYSCANNER_AWS_PROFILE=developer
+
+# Android SDK
+export PATH=$PATH:/Users/emiliu/Library/Android/sdk/platform-tools
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+source ~/.rvm/scripts/rvm
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+# Include ./.aws/aws_profile if it exists
+if [[ -f /Users/emiliu/.aws/aws_profile ]]; then
+    . /Users/emiliu/.aws/aws_profile
+fi
